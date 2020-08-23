@@ -927,13 +927,25 @@ form {
 .form input:hover,
 .form textarea:hover {
 	border-color: var(--link-color);
+	fill: var(--link-color);
 	transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form > input:focus-within {
+.form > input:focus-within + svg,
+.form > input:focus {
 	outline-color: var(--link-color);
 	transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	--dark-color: var(--link-color);
+	fill: var(--link-color);
 }
+
+/* .input:hover,
+svg:hover,
+.input:focus,
+svg:focus,
+.input:active {
+	--dark-color: var(--link-color);
+} */
 
 .form > textarea {
 	resize: none;
