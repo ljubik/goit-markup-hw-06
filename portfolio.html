@@ -341,11 +341,14 @@
 							</div>
 						</li>
 						<li class="foot-subscribe">
-							<h4>Подпишитесь на рассылку</h4>
-							<form action="/" id="usrform">
-								<input type="text" placeholder="e-mail" class="inpt-mail" name="usrname" />
-								<button class="btn-subscribe">
+							<label for="mail">Подпишитесь на рассылку</label>
+							<form action="#" method="post" id="usrform">
+								<input type="email" name="email" class="inpt-mail" id="mail" placeholder="E-mail" />
+								<button class="btn-subscribe" type="submit">
 									Подписаться
+									<svg width="24" height="24">
+										<use href="./images/sprite.svg#telegram"></use>
+									</svg>
 								</button>
 							</form>
 						</li>

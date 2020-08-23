@@ -453,7 +453,7 @@
 							<li class="clients-card list">
 								<div class="clients-logo">
 									<a href="#" target="_blank" rel="noopener noreferrer" class="link-clients">
-										<svg class="icon-clients" width="44" height="50">
+										<svg class="icon-clients icon" width="44" height="50">
 											<use href="./images/sprite.svg#logo_1"></use>
 										</svg>
 									</a>
@@ -462,7 +462,7 @@
 							<li class="clients-card list">
 								<div class="clients-logo">
 									<a href="#" target="_blank" rel="noopener noreferrer" class="link-clients">
-										<svg class="icon-clients" width="40" height="52">
+										<svg class="icon-clients icon" width="40" height="52">
 											<use href="./images/sprite.svg#logo_2"></use>
 										</svg>
 									</a>
@@ -471,7 +471,7 @@
 							<li class="clients-card list">
 								<div class="clients-logo">
 									<a href="#" target="_blank" rel="noopener noreferrer" class="link-clients">
-										<svg class="icon-clients" width="41" height="42">
+										<svg class="icon-clients icon" width="41" height="42">
 											<use href="./images/sprite.svg#logo_3"></use>
 										</svg>
 									</a>
@@ -480,7 +480,7 @@
 							<li class="clients-card list">
 								<div class="clients-logo">
 									<a href="#" target="_blank" rel="noopener noreferrer" class="link-clients">
-										<svg class="icon-clients" width="80" height="42">
+										<svg class="icon-clients icon" width="80" height="42">
 											<use href="./images/sprite.svg#logo_4"></use>
 										</svg>
 									</a>
@@ -489,7 +489,7 @@
 							<li class="clients-card list">
 								<div class="clients-logo">
 									<a href="#" target="_blank" rel="noopener noreferrer" class="link-clients">
-										<svg class="icon-clients" width="60" height="47">
+										<svg class="icon-clients icon" width="60" height="47">
 											<use href="./images/sprite.svg#logo_5"></use>
 										</svg>
 									</a>
@@ -498,7 +498,7 @@
 							<li class="clients-card list">
 								<div class="clients-logo">
 									<a href="#" target="_blank" rel="noopener noreferrer" class="link-clients">
-										<svg class="icon-clients" width="88" height="46">
+										<svg class="icon-clients icon" width="88" height="46">
 											<use href="./images/sprite.svg#logo_6"></use>
 										</svg>
 									</a>
@@ -590,14 +590,16 @@
 						</li>
 						<li class="foot-subscribe">
 							<label for="mail">Подпишитесь на рассылку</label>
+							<div class="foot-pos-button flex">
 							<form action="#" method="post" id="usrform">
 								<input type="email" name="email" class="inpt-mail" id="mail" placeholder="E-mail" />
-								<button class="btn-subscribe sub-button" type="submit">
+								<button class="btn-subscribe" type="submit">
 									Подписаться
 									<svg width="24" height="24">
 										<use href="./images/sprite.svg#telegram"></use>
 									</svg>
 								</button>
+							</div>
 							</form>
 						</li>
 					</ul>
@@ -612,6 +614,45 @@
 						<use xlink:href="./images/sprite.svg#icon_close"></use>
 					</svg>
 				</button>
+				<h2>Оставьте свои данные, мы вам перезвоним</h2>
+				<form method="post" id="subscribe-form">
+					<div class="form">
+						<label for="name">Имя</label>
+						<input type="name" name="name" id="name" required />
+						<svg width="18" height="18">
+							<use xlink:href="./images/sprite.svg#name"></use>
+						</svg>
+					</div>
+					<div class="form">
+						<label for="tel">Телефон</label>
+						<input type="tel" name="tel" id="tel" required />
+						<svg width="18" height="18">
+							<use xlink:href="./images/sprite.svg#tel"></use>
+						</svg>
+					</div>
+					<div class="form">
+						<label for="mailbox">Почта</label>
+						<input type="email" name="mailbox" id="mailbox" required />
+						<svg width="18" height="18">
+							<use xlink:href="./images/sprite.svg#mailbox"></use>
+						</svg>
+					</div>
+					<div class="form">
+						<label for="comment">Коментарий</label>
+						<textarea name="comment" id="comment" cols="5" rows="" placeholder="Введите текст"></textarea>
+					</div>
+					<div role="group" class="agreement">
+						<label>
+							<input type="checkbox" name="agreement" required />
+							<span class="agreement-icon"></span>
+							Соглашаюсь с рассылкой и принимаю
+							<a class="agreement-link" target="_blank" rel="noopener noreferrer" href="./license.html">
+								Условия договора
+							</a>
+						</label>
+					</div>
+					<button type="submit" class="agreement-submit">Отправить</button>
+				</form>
 			</div>
 		</div>
 		<script src="./js/modal.js"></script>

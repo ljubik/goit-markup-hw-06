@@ -146,6 +146,7 @@ header {
 
 .icon {
 	fill: var(--icon-color);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-contact svg {
@@ -438,7 +439,7 @@ figure {
 }
 
 .card {
-	width: 260px;
+	width: 270px;
 	background: var(--light-color);
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 0px 0px 4px 4px;
@@ -552,11 +553,10 @@ figure {
 	vertical-align: middle;
 	justify-content: center;
 	align-items: center;
-	transition-duration: 1s;
-	transition-property: all;
-	/* transition: border 1s cubic-bezier(0.4, 0, 0.2, 1);
-	transition: color 1s cubic-bezier(0.4, 0, 0.2, 1); */
-	color: var(--icon-color);
+	/* transition-duration: 1s;
+	transition-property: all; */
+	transition: border 1s cubic-bezier(0.4, 0, 0.2, 1);
+	/* transition: color 1s cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .clients-logo svg {
@@ -570,6 +570,7 @@ figure {
 	border: 1px solid var(--link-color);
 	color: var(--link-color);
 	--icon-color: var(--link-color);
+	/* fill: var(--link-color); */
 	/* background: var(--link-color); */
 	/* background: currentColor; */
 	opacity: 1;
@@ -577,6 +578,10 @@ figure {
 	/* transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1); */
 	transition: color 1s cubic-bezier(0.4, 0, 0.2, 1);
 	transition: border 1s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: --icon-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: fill 1s cubic-bezier(0.4, 0, 0.2, 1);
+	/* transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background 1s cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 footer {
@@ -588,30 +593,37 @@ footer {
 
 .footer {
 	display: flex;
-	padding: 30px;
+	/* padding: 30px; */
+	padding-left: 30px;
+	padding-right: 30px;
+	/* width: calc(100% / 2); */
 }
 
 .foot-list {
 	display: flex;
 	flex-wrap: nowrap;
-	/*width: calc((100% - 30px * 2) / 3); */
+
+	/* width: calc((100% - 30px * 2) / 3); */
 }
 
 .foot-address {
 	display: flex;
 	flex-wrap: wrap;
-	padding-top: 60px;
+	padding-top: 72px;
+	padding-bottom: 60px;
 	font-size: 14px;
 	line-height: 1.71;
 	letter-spacing: 0.03em;
+	width: 25%;
 }
 
 .foot-social {
 	display: flex;
 	flex-wrap: wrap;
 	text-transform: uppercase;
-	padding-top: 74px;
-	padding-left: 147px;
+	padding-top: 72px;
+	/* padding-left: 70px; */
+	width: 25%;
 }
 
 .foot-social-card {
@@ -629,14 +641,22 @@ footer {
 	display: flex;
 	flex-wrap: wrap;
 	text-transform: uppercase;
-	padding-top: 74px;
-	padding-left: 104px;
+	padding-top: 72px;
+	/* padding-left: 93px; */
+	width: 50%;
+}
+
+.foot-pos-button {
+	display: flex;
+	position: absolute;
+	flex-wrap: nowrap;
 }
 
 .studio-down {
 	color: var(--light-color);
 	display: inline;
 }
+
 .address {
 	display: flex;
 	flex-wrap: wrap;
@@ -651,6 +671,7 @@ address {
 	color: rgba(255, 255, 255, 0.6);
 	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .down-cont-link:hover,
 .down-cont-link:focus {
 	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -676,15 +697,6 @@ address {
 	align-items: center;
 	letter-spacing: 0.03em;
 	color: rgba(255, 255, 255, 0.6);
-}
-
-.sub-button:hover {
-	cursor: pointer;
-}
-.sub-button > svg {
-	position: absolute;
-	top: 13px;
-	right: 28px;
 }
 
 form {
@@ -717,17 +729,26 @@ form {
 	width: 200px;
 	height: 50px;
 	margin-left: 12px;
-	cursor: pointer;
 	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 	color: #ffffff;
 }
 
-.btn-subscribe::after {
+/* .btn-subscribe::after {
 	content: "";
 	display: block;
 	margin-right: 16px;
 	background-image: url(../images/icon/icon_send.svg);
 	background-repeat: no-repeat;
+} */
+
+.btn-subscribe > svg {
+	position: absolute;
+	top: 13px;
+	right: 28px;
+}
+
+.btn-subscribe:hover {
+	cursor: pointer;
 }
 
 /* *[ Modal window style ]* */
@@ -741,7 +762,6 @@ form {
 	pointer-events: initial;
 	z-index: 100;
 	opacity: 1;
-
 	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -759,19 +779,20 @@ form {
 .modal {
 	width: 528px;
 	display: flex;
+	flex-direction: column;
 	min-width: 528px;
 	min-height: 581px;
 	height: 80%;
-	padding: 80px 40px;
-	position: absolute;
+	padding: 40px;
+	box-sizing: border-box;
+	position: relative;
 	top: 50%;
 	left: 50%;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
-	background-color: var(--light-color);
+	background: var(--light-color);
 	transform: translate(-50%, -50%) scale(1);
 	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-	padding: 80px 40px;
 	z-index: 101;
 }
 
@@ -793,6 +814,22 @@ form {
 	cursor: pointer;
 	z-index: 302;
 }
+.btn-close-modal:hover {
+	cursor: pointer;
+}
+
+.btn-close-modal > svg {
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-close-modal:hover,
+.btn-close-modal:focus,
+.btn-close-modal:hover > svg,
+.btn-close-modal:focus > svg {
+	--dark-color: var(--link-color);
+	transition: fill 0.2s ease-in;
+	fill: var(--link-color);
+}
 
 /* .btn-close-modal > svg {
 	display: flex;
@@ -803,10 +840,169 @@ form {
 	padding-top: 5px;
 } */
 
-.btn-close-modal:hover,
-.btn-close-modal:focus {
-	--dark-color: var(--link-color);
-	transition: fill 0.2s ease-in;
+.modal > h2 {
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+	letter-spacing: 0.03em;
+	color: var(--dark-color);
+}
+
+form {
+	box-shadow: none;
+}
+
+.form:first-child {
+	position: relative;
+	margin-top: 12px;
+	background-color: var(--light-color);
+}
+
+.form:not(:first-child) {
+	position: relative;
+	margin-top: 10px;
+	background-color: var(--light-color);
+}
+
+.form > label {
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.01em;
+	background-color: var(--light-color);
+	color: var(--body-color);
+}
+
+.form > svg {
+	position: absolute;
+	top: 29px;
+	left: 15px;
+	fill: var(--dark-color);
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form > input:focus-within + svg {
+	fill: var(--link-color);
+}
+
+.form > input {
+	margin-top: 4px;
+	width: 448px;
+	height: 40px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	box-sizing: border-box;
+	border-radius: 4px;
+	padding-left: 42px;
+	transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: var(--light-color);
+}
+
+.form input:hover,
+.form textarea:hover {
+	border-color: var(--link-color);
+	transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form > input:focus-within {
+	outline-color: var(--link-color);
+	transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form > textarea {
+	resize: none;
+	box-sizing: border-box;
+	margin-top: 4px;
+	padding: 12px 16px;
+	width: 448px;
+	height: 120px;
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+}
+
+.form > textarea::placeholder {
+	resize: none;
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.01em;
+	color: rgba(117, 117, 117, 0.5);
+}
+
+.form > textarea:focus-within {
+	outline-color: var(--link-color);
+}
+
+.agreement {
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.agreement > label {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 1.71;
+	letter-spacing: 0.03em;
+	color: var(--body-color);
+	margin-left: 7px;
+}
+
+.agreement > label:hover {
+	cursor: pointer;
+}
+
+.agreement-link {
+	margin-left: 3px;
+	color: var(--link-color);
+}
+
+.agreement > label > input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.agreement-icon {
+	display: inline-block;
+	box-sizing: border-box;
+	margin-right: 7px;
+	width: 16px;
+	height: 15px;
+	background-image: url(../images/uncheckedbox.svg);
+	border-radius: 2px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agreement > label > input:checked + .agreement-icon {
+	background: var(--link-color) url(../images/checkedbox.svg);
+	background-size: contain;
+}
+
+.agreement-submit {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 1.87;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	letter-spacing: 0.06em;
+	color: var(--light-color);
+	padding: 10px 55px;
+	background: #188ce8;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+.agreement-submit:hover {
+	cursor: pointer;
 }
 
 /* *[ Portfolio page style ]* */
