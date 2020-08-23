@@ -607,7 +607,7 @@
 				</div>
 			</div>
 		</footer>
-		<!-- Modal window -->
+		<!-- Модальне вікно -->
 		<div class="backdrop is-hidden" data-modal>
 			<div class="modal">
 				<button class="btn-close-modal" data-modal-close>
@@ -621,21 +621,21 @@
 						<label for="name">Имя</label>
 						<input type="name" name="name" id="name" required />
 						<svg width="18" height="18">
-							<use href="./images/svg/user-name.svg"></use>
+							<use href="./images/svg/user-name.svg#user-name"></use>
 						</svg>
 					</div>
 					<div class="form">
 						<label for="tel">Телефон</label>
 						<input type="tel" name="tel" id="tel" required />
 						<svg width="18" height="18">
-							<use xlink:href="./images/sprite.svg#tel"></use>
+							<use href="./images/svg/user-tel.svg#user-tel"></use>
 						</svg>
 					</div>
 					<div class="form">
 						<label for="mailbox">Почта</label>
 						<input type="email" name="mailbox" id="mailbox" required />
 						<svg width="18" height="18">
-							<use xlink:href="./images/sprite.svg#mailbox"></use>
+							<use xlink:href="./images/svg/user-mail.svg#user-mail"></use>
 						</svg>
 					</div>
 					<div class="form">
@@ -643,8 +643,8 @@
 						<textarea name="comment" id="comment" cols="5" rows="" placeholder="Введите текст"></textarea>
 					</div>
 					<div role="group" class="agreement">
-						<label>
-							<input type="checkbox" name="agreement" required />
+						<label for="agreement-checkbox">
+							<input type="checkbox" name="agreement" id="agreement-checkbox" required />
 							<span class="agreement-icon"></span>
 							Соглашаюсь с рассылкой и принимаю
 							<a class="agreement-link" target="_blank" rel="noopener noreferrer" href="./license.html">

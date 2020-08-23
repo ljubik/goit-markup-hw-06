@@ -686,7 +686,7 @@ address {
 }
 
 .form-subscribe {
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
 	border-radius: 4px;
 	display: flex;
 	flex-wrap: nowrap;
@@ -715,6 +715,11 @@ address {
 	align-items: center;
 	letter-spacing: 0.03em;
 	color: rgba(255, 255, 255, 0.6);
+}
+
+.inpt-mail:hover {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-subscribe {
@@ -773,6 +778,7 @@ address {
 }
 
 /* *[ Modal window style ]* */
+
 .backdrop {
 	position: fixed;
 	top: 0;
@@ -835,9 +841,6 @@ address {
 	cursor: pointer;
 	z-index: 302;
 }
-.btn-close-modal:hover {
-	cursor: pointer;
-}
 
 .btn-close-modal > svg {
 	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -850,6 +853,7 @@ address {
 	--dark-color: var(--link-color);
 	transition: fill 0.2s ease-in;
 	fill: var(--link-color);
+	cursor: pointer;
 }
 
 /* .btn-close-modal > svg {
